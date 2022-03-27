@@ -1,0 +1,12 @@
+http://localhost:3000/tools/update/{id}
+
+
+
+  {
+    "description": "string",
+    "links": "string",
+    "tags": [
+      "string"
+    ],
+    "title": "string"
+  }

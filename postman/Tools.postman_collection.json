@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "e9d607d8-569e-4205-a010-a4b2905399e2",
+		"name": "Tools",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "tools",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/tools",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostTools",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"hotel\",\r\n\"links\": \"https://github.com/typicode/hotel\",\r\n\"description\": \"Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.\",\r\n\"tags\":\r\n[\"node\", \r\n\"organizing\",\r\n \"webapps\",\r\n \"domain\", \r\n\"developer\",\r\n \"https\",\r\n \"proxy\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/tools/insert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tools",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelletTools",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/tools/delete/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tools",
+								"delete",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/tools/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tools",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutTools",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"title\": \"test\",\r\n\"links\": \"https://www.fastify.io/\",\r\n\"description\": \"Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.\",\r\n\"tags\": [\r\n\"web\",\r\n\"framework\",\r\n\"nodes\",\r\n\"http2\",\r\n\"https\",\r\n\"localhost\"\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/tools/update/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tools",
+								"update",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

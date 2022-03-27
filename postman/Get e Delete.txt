@@ -1,0 +1,10 @@
+
+GET:
+
+http://localhost:3000/tools
+http://localhost:3000/tools/{id}
+
+
+DELETE: 
+
+http://localhost:3000/tools/delete/{id}

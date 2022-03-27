@@ -42,7 +42,7 @@ public class ToolsController {
 		return ResponseEntity.status(HttpStatus.OK).body(toolsModelOptional.get());
 	}
 
-	@PostMapping
+	@PostMapping("/insert")
 	public ResponseEntity<Object> RegisterTools(@RequestBody @Valid ToolsDTO toolsDto) {
 
 		var toolsModel = new ToolsModel();
@@ -56,7 +56,7 @@ public class ToolsController {
 
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<Object> updateTools(@PathVariable(value = "id") Long id,
 			@RequestBody @Valid ToolsDTO toolsDto) {
 		Optional<ToolsModel> toolsModelOptional = toolsService.findByIdTools(id);
@@ -69,7 +69,7 @@ public class ToolsController {
 		return ResponseEntity.status(HttpStatus.OK).body(toolsService.save(toolsModel));
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Object> deleteTools(@PathVariable(value = "id") Long id) {
 		Optional<ToolsModel> toolsModelOptional = toolsService.findByIdTools(id);
 		if (!toolsModelOptional.isPresent()) {
