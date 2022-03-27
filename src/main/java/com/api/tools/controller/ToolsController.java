@@ -45,13 +45,14 @@ public class ToolsController {
 	@PostMapping("/insert")
 	public ResponseEntity<Object> RegisterTools(@RequestBody @Valid ToolsDTO toolsDto) {
 
-		var toolsModel = new ToolsModel();
-		BeanUtils.copyProperties(toolsDto, toolsModel);
-		Optional<Boolean> tituloExistente = toolsService.titleExisting(toolsModel.getTitle());
-		if (tituloExistente.isPresent()) {
+		
+//		Optional<Boolean> tituloExistente = toolsService.titleExisting(toolsModel.getTitle());
+		// verificação 
+		if (toolsService.titleExisting(toolsDto.getTitle())) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Title already exists");
 		}
-
+		var toolsModel = new ToolsModel();
+		BeanUtils.copyProperties(toolsDto, toolsModel);
 		return ResponseEntity.status(HttpStatus.CREATED).body(toolsService.save(toolsModel));
 
 	}

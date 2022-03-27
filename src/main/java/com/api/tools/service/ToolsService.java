@@ -25,8 +25,11 @@ public class ToolsService {
 	public Optional<ToolsModel> save (ToolsModel toolsModel){
 	return Optional.ofNullable(repository.save(toolsModel));
 }
-	public Optional<Boolean> titleExisting (String title) {
-		return repository.findAllByTitleIgnoreCase(title);
+//	public Optional<Boolean> titleExisting (String title) {
+//		return repository.findAllByTitleIgnoreCase(title);
+//	}
+	public boolean titleExisting (String title) {
+		return repository.existsByTitleIgnoreCase(title);
 	}
 	
 	@Transactional
