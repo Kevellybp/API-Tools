@@ -45,7 +45,6 @@ public class ToolsController {
 	@PostMapping("/insert")
 	public ResponseEntity<Object> RegisterTools(@RequestBody @Valid ToolsDTO toolsDto) {
 
-		
 //		Optional<Boolean> tituloExistente = toolsService.titleExisting(toolsModel.getTitle());
 		// verificação 
 		if (toolsService.titleExisting(toolsDto.getTitle())) {
